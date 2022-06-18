@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import DirectTime from "./modules/MainPage/DirectTime";
+import React from "react";
 import MainPage from "./modules/MainPage/MainPage";
 
 function App() {
