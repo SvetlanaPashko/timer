@@ -7,8 +7,8 @@ const DirectTime = () => {
   setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
 
   return (
-    <div className={styles.main}>
-      <div>{time}</div>
+    <div className={styles.tab}>
+      <div className={styles.title}>{time}</div>
     </div>
   );
 };

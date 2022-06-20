@@ -2,5 +2,23 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+.title {
   font-size: 64px;
+}
+
+.selectTime {
+  display: flex;
+  column-gap: 16px;
+}
+
+.doublePoint {
+  display: flex;
+  align-items: center;
+}
+
+.buttons {
+  margin-top: 40px;
 }
