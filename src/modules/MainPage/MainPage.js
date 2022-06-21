@@ -9,7 +9,7 @@ const MainPage = () => {
   return (
     <article className={styles.main}>
       <div className={styles.tabs}>
-        <Tabs defaultActiveKey="2">
+        <Tabs defaultActiveKey="1">
           <TabPane tab="Точное время" key="1">
             <DirectTime></DirectTime>
           </TabPane>
