@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import styles from "./directionTime.module.css";
-import { ReactComponent as Minsk } from "../../svg/minsk.svg";
-import { ReactComponent as Tokyo } from "../../svg/tokyo.svg";
+import Minsk from "../../svg/minsk.jpg";
+import Tokyo from "../../svg/tokyo.jpg";
+import Benijing from "../../svg/beijing.jpg";
+import NY from "../../svg/new_york.jpg";
+import BA from "../../svg/buenos-aires.jpg";
+import London from "../../svg/london.jpg";
 
 window.addEventListener("load", () => {
   const butContainer = document.getElementsByClassName("butContainer");
@@ -12,6 +16,7 @@ window.addEventListener("load", () => {
         element.addEventListener("click", (event) => {
           let b = event.target;
           setCurrentTimeZone(buttons.indexOf(b));
+          setPic(buttons.indexOf(b));
         });
       });
     }
@@ -27,25 +32,25 @@ const timeZones = [
   "Europe/London",
 ];
 
-const timeZonePic = [
-  "../../svg/minsk.jpg",
-  "../../svg/tokyo.jpg",
-  "../../svg/benijing.jpg",
-  "../../svg/new_york.jpg",
-  "../../svg/buenos-aires.jpg",
-  "../../svg/london.jpg",
-];
+const timeZonePic = [Minsk, Tokyo, Benijing, NY, BA, London];
 
 let timeZone = timeZones[0];
+let timePic = timeZonePic[0];
 
 function setCurrentTimeZone(timeZoneNumber) {
   timeZone = timeZones[timeZoneNumber];
+}
+
+function setPic(timeZoneNumber) {
+  timePic = timeZonePic[timeZoneNumber];
 }
 
 function realtimeClock() {
   const rtClock = new Date().toLocaleTimeString("en-US", {
     timeZone: timeZone,
   });
+
+  document.getElementById("timeZonesPics").src = timePic;
 
   document.getElementById("clock").innerHTML = rtClock;
   setTimeout(realtimeClock, 500);
@@ -64,7 +69,7 @@ const DirectTime = () => {
           <button>Buenos Aires</button>
           <button>London</button>
         </div>
-        <div id="timeZonesPics"></div>
+        <img id="timeZonesPics" />
       </div>
     </div>
   );

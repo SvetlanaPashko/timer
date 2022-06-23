@@ -28,7 +28,6 @@
   display: flex;
   justify-content: center;
   margin-top: 45%;
-  /* position: absolute; */
   font-size: 8vw;
   font-weight: bold;
   text-align: center;
@@ -68,7 +67,10 @@ button {
   margin-top: 25%;
 }
 
-svg {
-  width: 200px;
-  height: 300px;
+img {
+  max-width: 450px;
+  display: flex;
+  justify-content: center;
+  max-height: 400px;
+  margin-top: 25px;
 }
