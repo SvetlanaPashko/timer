@@ -1,5 +1,5 @@
 import styles from "./mainPage.module.css";
-import { ReactComponent as Minsk } from "../../svg/minsk.svg";
+
 import { Tabs } from "antd";
 import DirectTime from "./DirectTime";
 import StopWatch, { Timer } from "./StopWatch";
@@ -22,9 +22,6 @@ const MainPage = () => {
         </Tabs>
       </div>
       <main></main>
-      <footer>
-        <Minsk />
-      </footer>
     </article>
   );
 };

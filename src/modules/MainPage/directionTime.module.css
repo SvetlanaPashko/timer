@@ -24,9 +24,11 @@
 }
 
 .butContainer {
-  width: 100%;
+  width: 300px;
+  display: flex;
+  justify-content: center;
   margin-top: 45%;
-  position: absolute;
+  /* position: absolute; */
   font-size: 8vw;
   font-weight: bold;
   text-align: center;
@@ -45,25 +47,28 @@ button {
 }
 
 .clock {
-  width: 300px;
-  position: absolute;
+  width: 95%;
+  text-align: center;
+  margin-bottom: 45px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #14ffe9, #ffeb3b, #ff00e0);
+  box-shadow: 0 0 10px rgba(222, 242, 47, 0.87);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 3vw;
+  color: rgba(19, 19, 87, 0.81);
+  margin-top: 15%;
+}
+
+#clock {
   font-size: 3vw;
   color: rgba(36, 36, 187, 0.81);
   background: rgba(255, 204, 0, 0.174);
   box-shadow: 0 0 10px rgba(222, 242, 47, 0.87);
-  text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 25%;
 }
 
-#clock {
-  width: 300px;
-  position: absolute;
-  font-size: 3vw;
-  color: rgba(36, 36, 187, 0.81);
-  background: rgba(255, 204, 0, 0.174);
-  box-shadow: 0 0 10px rgba(222, 242, 47, 0.87);
-  /* text-align: center; */
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  margin-top: 25%;
+svg {
+  width: 200px;
+  height: 300px;
 }

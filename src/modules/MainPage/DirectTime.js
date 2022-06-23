@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import styles from "./directionTime.module.css";
+import { ReactComponent as Minsk } from "../../svg/minsk.svg";
+import { ReactComponent as Tokyo } from "../../svg/tokyo.svg";
 
 window.addEventListener("load", () => {
-  var butContainer = document.getElementsByClassName("butContainer");
+  const butContainer = document.getElementsByClassName("butContainer");
   if (typeof butContainer != typeof undefined && butContainer.length > 0) {
-    var buttons = Array.from(butContainer[0].children);
+    const buttons = Array.from(butContainer[0].children);
     if (typeof buttons != typeof undefined && buttons.length > 0) {
       buttons.forEach((element) => {
         element.addEventListener("click", (event) => {
-          var b = event.target;
+          let b = event.target;
           setCurrentTimeZone(buttons.indexOf(b));
         });
       });
@@ -25,36 +27,31 @@ const timeZones = [
   "Europe/London",
 ];
 
-var timeZone = timeZones[0];
+const timeZonePic = [
+  "../../svg/minsk.jpg",
+  "../../svg/tokyo.jpg",
+  "../../svg/benijing.jpg",
+  "../../svg/new_york.jpg",
+  "../../svg/buenos-aires.jpg",
+  "../../svg/london.jpg",
+];
+
+let timeZone = timeZones[0];
 
 function setCurrentTimeZone(timeZoneNumber) {
   timeZone = timeZones[timeZoneNumber];
 }
 
 function realtimeClock() {
-  var rtClock = new Date().toLocaleTimeString("en-US", { timeZone: timeZone });
-  // var hours = rtClock.getHours();
-  // var minutes = rtClock.getMinutes();
-  // var seconds = rtClock.getSeconds();
+  const rtClock = new Date().toLocaleTimeString("en-US", {
+    timeZone: timeZone,
+  });
 
-  // // adding AM and PM
-  // var amPm = hours < 12 ? "AM" : "PM";
-  // hours = hours < 12 ? hours : hours - 12; // convert hours into 12-hour format
-  // // adding leading 0 before H/M/S
-  // hours = ("0" + hours).slice(-2);
-  // minutes = ("0" + minutes).slice(-2);
-  // seconds = ("0" + seconds).slice(-2); //repeat ?
-
-  // //display the Clock
   document.getElementById("clock").innerHTML = rtClock;
-  var t = setTimeout(realtimeClock, 500);
+  setTimeout(realtimeClock, 500);
 }
 
 const DirectTime = () => {
-  // const [time, setTime] = useState(new Date().toLocaleTimeString());
-
-  // setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
-
   return (
     <div className={styles.main}>
       <div id="mainClockCont">
@@ -67,6 +64,7 @@ const DirectTime = () => {
           <button>Buenos Aires</button>
           <button>London</button>
         </div>
+        <div id="timeZonesPics"></div>
       </div>
     </div>
   );
