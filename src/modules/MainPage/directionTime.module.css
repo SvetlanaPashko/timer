@@ -45,6 +45,10 @@ button {
   box-shadow: 0 0 10px rgba(222, 242, 47, 0.87);
 }
 
+button:focus {
+  background-color: #14ffe9;
+}
+
 .clock {
   width: 95%;
   text-align: center;
